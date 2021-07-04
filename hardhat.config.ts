@@ -18,7 +18,7 @@ task("accounts", "Prints the list of accounts", async (args, hre) => {
 // Go to https://hardhat.org/config/ to learn moreww
 const config: HardhatUserConfig = {
   solidity: {
-    version: "0.7.3",
+    version: "0.5.12",
     settings: {
       optimizer: {
         enabled: true,
@@ -30,11 +30,6 @@ const config: HardhatUserConfig = {
     localhost: {
       url: "http://127.0.0.1:8545",
       timeout: 1200000,
-      accounts: [
-        process.env["PRIVATE_KEY"]
-          ? process.env["PRIVATE_KEY"]
-          : "0000000000000000000000000000000000000000000000000000000000000001",
-      ],
     },
     remote: {
       url: process.env["REMOTE_URL"] ? process.env["REMOTE_URL"] : "http://127.0.0.1:8545",
